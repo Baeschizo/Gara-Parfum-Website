@@ -26,6 +26,7 @@ function recommendScents(query,products,fragranceNotes){
 
 
 const occasionProfiles=[
+ {name:'hot weather and sweating',pattern:/sweat|sweaty|perspir|pawisin|body\s*odor|humid|commut|outdoor|gym|workout|exercise|heat|hot\s*weather|tropical/,families:['fresh','citrus','aquatic'],intro:'If you tend to sweat a lot or spend time in hot weather, you may enjoy fresh, citrus or aquatic fragrances. These can feel lighter and more refreshing, though perfume does not prevent sweating or replace deodorant. Here are some options based on their listed fragrance notes.'},
  {name:'night out',pattern:/night\s*out|nightlife|clubbing|party|evening|going out|night time|nighttime/,families:['woody','spicy','musky','sweet'],intro:'For a night out, you might enjoy a warmer, richer fragrance. Here are options whose listed notes lean woody, spicy, musky or sweet.'},
  {name:'date night',pattern:/date\s*night|romantic|dinner date|dating|dinner/,families:['sweet','floral','musky','woody'],intro:'For a date night, these fragrances have notes that may suit a warm, inviting scent profile.'},
  {name:'office',pattern:/office|workplace|work\s*day|professional|school|class/,families:['fresh','citrus','aquatic','floral'],intro:'For work or school, these fragrances feature fresh, citrus, aquatic or soft floral notes.'},
