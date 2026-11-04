@@ -290,3 +290,23 @@
 .gara-chat-compose button:disabled{opacity:.35;cursor:default}
 .gara-chat-disclaimer{text-align:center;background:#fff;padding:0 10px 10px;color:#9b9085;font-size:9px}
 @media(max-width:600px){.gara-chat-root{right:14px;bottom:14px}.gara-chat-panel{bottom:66px;height:min(560px,calc(100dvh - 110px))}.gara-chat-toggle{padding:14px 16px}}
+
+/* Editorial fragrance card hover preview */
+.product-photo{position:relative}
+.gara-scent-preview{position:absolute;z-index:5;left:5%;right:5%;bottom:5%;padding:19px 18px 15px;border:1px solid #ffffffb8;border-radius:14px;background:rgba(248,244,238,.96);box-shadow:0 12px 35px #30271d29;backdrop-filter:blur(12px);color:#302a24;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .24s ease,transform .24s ease,visibility .24s;cursor:default;text-align:left;max-height:90%;overflow:auto}
+.product-photo:hover .gara-scent-preview,.product-photo:focus-within .gara-scent-preview{opacity:1;visibility:visible;transform:translateY(0)}
+.gara-preview-kicker{font-size:9px;letter-spacing:2px;color:#9d8569;font-weight:700;margin-bottom:7px}
+.gara-scent-preview h4{font:400 clamp(17px,1.6vw,23px) Georgia,serif;margin:0 0 8px;color:#2d2925}
+.gara-preview-desc{font-size:11px;line-height:1.55;color:#746c63;margin:0 0 13px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gara-preview-notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;border-top:1px solid #d9d0c6;border-bottom:1px solid #d9d0c6;padding:12px 0}
+.gara-preview-note{min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.gara-preview-note-img{width:46px;height:46px;border:2px solid #fff;box-shadow:0 0 0 1px #bdb3a6;border-radius:50%;background:#e5dfd6;display:grid;place-items:center;overflow:hidden;font:22px Georgia,serif;color:#9b8e80}
+.gara-preview-note-img img{width:100%;height:100%;object-fit:cover}
+.gara-preview-note small{font-size:9px;letter-spacing:1.5px;color:#998c7d}
+.gara-preview-note>span:last-child{font-size:10px;line-height:1.35;color:#4c443d;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.gara-preview-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:12px;font-size:10px;text-align:center;color:#554b42}
+.gara-preview-bottom span+span{border-left:1px solid #d9d0c6}
+.gara-preview-view{margin:13px auto 0;display:flex;align-items:center;justify-content:center;gap:8px;background:#302a24;border:0;border-radius:5px;padding:10px 12px;color:white;font-size:9px;letter-spacing:1px;width:100%;cursor:pointer}
+@media(max-width:850px){.gara-scent-preview{left:4%;right:4%;padding:12px 10px 10px}.gara-preview-note-img{width:34px;height:34px}.gara-preview-desc{font-size:10px}.gara-preview-bottom{font-size:9px}}
+@media(hover:none){.product-photo:focus-within .gara-scent-preview{opacity:1;visibility:visible;transform:none}}
+@media(prefers-reduced-motion:reduce){.gara-scent-preview{transition:none}}
