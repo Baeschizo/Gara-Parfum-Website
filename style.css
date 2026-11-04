@@ -310,3 +310,44 @@
 @media(max-width:850px){.gara-scent-preview{left:4%;right:4%;padding:12px 10px 10px}.gara-preview-note-img{width:34px;height:34px}.gara-preview-desc{font-size:10px}.gara-preview-bottom{font-size:9px}}
 @media(hover:none){.product-photo:focus-within .gara-scent-preview{opacity:1;visibility:visible;transform:none}}
 @media(prefers-reduced-motion:reduce){.gara-scent-preview{transition:none}}
+
+/* Compact hover card — no internal scrollbar */
+.gara-scent-preview{left:6%;right:6%;bottom:5%;padding:12px 12px 11px;max-height:none;overflow:visible;border-radius:11px}
+.gara-preview-kicker{font-size:8px;margin-bottom:4px;letter-spacing:1.2px}
+.gara-scent-preview h4{font-size:clamp(13px,1.2vw,17px);margin-bottom:5px}
+.gara-preview-desc{font-size:10px;line-height:1.4;margin-bottom:8px;-webkit-line-clamp:2}
+.gara-preview-notes{padding:8px 0;gap:4px}
+.gara-preview-note{gap:4px}
+.gara-preview-note-img{width:34px;height:34px}
+.gara-preview-note small{font-size:8px}
+.gara-preview-note>span:last-child{font-size:9px;-webkit-line-clamp:1}
+.gara-preview-bottom{margin-top:8px;font-size:9px}
+.gara-preview-view{margin-top:8px;padding:8px;font-size:8px}
+.gara-product-page{max-width:1380px;margin:0 auto;padding:35px clamp(20px,5vw,75px) 85px}
+.gara-product-breadcrumb{display:flex;align-items:center;gap:26px;margin-bottom:27px;color:#8a8074;font-size:11px}
+.gara-product-breadcrumb button{border:0;background:none;color:#302a24;font-weight:600;cursor:pointer}
+.gara-product-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,85px);align-items:start}
+.gara-product-visual{background:#eee9e2;aspect-ratio:1/1;display:grid;place-items:center;border-radius:5px;overflow:hidden}
+.gara-product-visual img{width:83%;height:83%;object-fit:contain}
+.gara-product-information{padding:20px 0}
+.gara-product-information h1{font:400 clamp(35px,4vw,62px) Georgia,serif;margin:16px 0 7px;letter-spacing:-1px}
+.gara-product-type{font:17px Georgia,serif;color:#71675d}
+.gara-product-price{font:28px Georgia,serif;color:#a48462;margin:34px 0 22px}
+.gara-product-description{font-size:13px;line-height:2;color:#736a61;margin:0 0 27px}
+.gara-product-spec{display:flex;justify-content:space-between;max-width:350px;border-bottom:1px solid #e3dbd1;padding:13px 0;font-size:12px}
+.gara-product-spec span{font-size:10px;letter-spacing:1.5px;color:#988a7b}
+.gara-product-availability{color:#8b7e6f;font-size:11px;margin:24px 0}
+.gara-product-buy{display:flex;gap:14px;align-items:stretch;flex-wrap:wrap}
+.gara-product-buy .qty{display:flex;align-items:center}
+.gara-product-buy .btn{flex:1;min-width:200px;display:flex;align-items:center;justify-content:center;gap:12px}
+.gara-product-fineprint{font-size:10px;color:#a39789;margin-top:15px}
+.gara-product-scent{border-top:1px solid #ddd3c7;margin-top:85px;padding-top:55px;display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:30px}
+.gara-product-scent-intro h2{font:36px Georgia,serif;margin:15px 0}
+.gara-product-scent-intro p{font-size:12px;line-height:1.9;color:#807568;max-width:280px}
+.gara-product-scent-note{border-left:1px solid #e3dbd1;padding-left:25px}
+.gara-product-note-image{width:min(150px,100%);aspect-ratio:1;border-radius:50%;background:#e5ded4;display:grid;place-items:center;overflow:hidden;margin-bottom:23px;color:#a29483;font:65px Georgia,serif}
+.gara-product-note-image img{width:100%;height:100%;object-fit:cover}
+.gara-product-scent-note strong{font-size:10px;letter-spacing:1.8px}
+.gara-product-scent-note p{font-size:12px;color:#81766b;line-height:1.6}
+@media(max-width:850px){.gara-product-hero{grid-template-columns:1fr}.gara-product-visual{aspect-ratio:4/3}.gara-product-scent{grid-template-columns:repeat(3,1fr);gap:12px}.gara-product-scent-intro{grid-column:1/-1}.gara-product-scent-note{padding-left:12px}.gara-product-note-image{width:100px}.gara-product-information{padding:0}}
+@media(max-width:500px){.gara-product-page{padding:20px 16px 55px}.gara-product-breadcrumb{gap:12px;font-size:10px}.gara-product-scent{margin-top:50px;padding-top:30px}.gara-product-note-image{width:75px}.gara-product-scent-note strong{font-size:9px}.gara-product-scent-note p{font-size:10px}.gara-scent-preview{padding:8px}.gara-preview-desc{display:none}.gara-preview-note-img{width:27px;height:27px}.gara-preview-bottom{display:none}}
