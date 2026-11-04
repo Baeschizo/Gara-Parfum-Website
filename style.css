@@ -177,3 +177,29 @@
  padding:0;mix-blend-mode:normal;filter:none;
  -webkit-mask-image:none;mask-image:none;
 }
+
+/* Balanced editorial best-sellers: smaller bottles and clearly separated cards. */
+.gara-bestsellers .products{gap:clamp(16px,2vw,32px)}
+.gara-bestsellers .product-photo{
+  height:auto;aspect-ratio:4/5;background:#eee9e2;
+  border-radius:3px;overflow:hidden;display:flex;
+  align-items:center;justify-content:center;
+}
+.gara-bestsellers .product-photo>img{
+  width:80%;height:84%;padding:0;display:block;
+  object-fit:contain;object-position:center;
+  mix-blend-mode:normal;filter:none;
+  -webkit-mask-image:none;mask-image:none;
+  transform:none;transition:transform .3s ease;
+}
+.gara-bestsellers .product-photo:hover>img{transform:scale(1.025)}
+.gara-bestsellers .product-caption{padding-top:16px}
+@media(max-width:800px){
+ .gara-bestsellers .products{gap:16px}
+ .gara-bestsellers .product-photo>img{width:82%;height:84%}
+}
+@media(max-width:540px){
+ .gara-bestsellers .products{gap:13px}
+ .gara-bestsellers .product-photo{height:auto;aspect-ratio:4/5}
+ .gara-bestsellers .product-photo>img{width:86%;height:86%}
+}
