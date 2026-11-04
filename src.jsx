@@ -23,7 +23,7 @@ const catalog=[
 ['314','EVERMORE','For Him','30ml',449,'Listed in men’s scent options'],
 ['315','CLEAN NOTES','For Him','30ml',449,'Listed in men’s scent options']
 ];
-const productPhotos={'102':'/products/102_Poudre.png','301':'/products/301_Vibe.png','308':'/products/308_Blue_Spice.png','725':'/products/725_Opulent.png'};
+const productPhotos={'102':'/products/GARA 102 Poudre Perfume Bottle.png','301':'/products/Minimalist GARA 301 VIBE Perfume Bottle (1).png','308':'/products/GARA Blue Spice Perfume Bottle.png','725':'/products/GARA 725 Opulent Perfume Bottle.png'};
 const products=catalog.map((v,i)=>({id:i+1,code:v[0],name:v[0]+' '+v[1],subtitle:v[2]+' · '+v[3]+' · Inspired fragrance',family:'Inspired',category:v[2],notes:[],tag:i===0?'50ML':i===1?'30ML':'',price:v[4],image:productPhotos[v[0]]||bottle(v[0],v[1]),description:v[5],size:v[3]}));
 const categories=[{name:'For Him',detail:'Discover the men’s collection.',image:photos[2]},{name:'For Her',detail:'Explore fragrances for her.',image:photos[1]},{name:'For All',detail:'Scents for everyone.',image:photos[0]}];
 const money=n=>'₱'+n.toLocaleString('en-PH');
