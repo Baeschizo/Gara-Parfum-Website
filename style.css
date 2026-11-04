@@ -373,3 +373,5 @@ body:has(.drawer-layer) .gara-chat-root{display:none!important}
 .gara-decant-request input{background:#faf8f4}
 .gara-decant-request small{font-size:10px;color:#8e8071}
 @media(max-width:600px){.drawer-head{padding:20px}.checkout{padding:20px}.bag-item img{height:110px}}
+
+.gara-product-size-choice{padding:15px 0;border-bottom:1px solid #e3dbd1}.gara-product-size-choice>span{display:block;font-size:10px;letter-spacing:1.5px;color:#988a7b;margin-bottom:12px}.gara-size-options{display:flex;gap:10px}.gara-size-options button{background:transparent;border:1px solid #d9cec2;padding:12px 22px;color:#534a41;cursor:pointer;font-size:12px}.gara-size-options button.active{border-color:#302a24;background:#302a24;color:#fff}.gara-product-size-choice small{display:block;margin-top:12px;color:#9a7653;line-height:1.6}.gara-product-buy .btn:disabled{opacity:.45;cursor:not-allowed}
