@@ -375,3 +375,15 @@ body:has(.drawer-layer) .gara-chat-root{display:none!important}
 @media(max-width:600px){.drawer-head{padding:20px}.checkout{padding:20px}.bag-item img{height:110px}}
 
 .gara-product-size-choice{padding:15px 0;border-bottom:1px solid #e3dbd1}.gara-product-size-choice>span{display:block;font-size:10px;letter-spacing:1.5px;color:#988a7b;margin-bottom:12px}.gara-size-options{display:flex;gap:10px}.gara-size-options button{background:transparent;border:1px solid #d9cec2;padding:12px 22px;color:#534a41;cursor:pointer;font-size:12px}.gara-size-options button.active{border-color:#302a24;background:#302a24;color:#fff}.gara-product-size-choice small{display:block;margin-top:12px;color:#9a7653;line-height:1.6}.gara-product-buy .btn:disabled{opacity:.45;cursor:not-allowed}
+
+/* Fragrance notes: editorial photo gallery, no hover overlay */
+.gara-scent-preview,.product-photo .quick{display:none!important}
+.gara-product-scent{grid-template-columns:1.1fr repeat(3,1fr);align-items:start}
+.gara-product-scent-note strong{display:block;margin-bottom:19px}
+.gara-product-note-gallery{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.gara-product-note-entry{width:85px;text-align:center}
+.gara-product-note-entry .gara-product-note-image{width:76px;height:76px;margin:0 auto 9px;border-radius:9px;background:#ede8e0;font-size:33px}
+.gara-product-note-entry>span{font-size:11px;line-height:1.45;color:#675e55;display:block;overflow-wrap:break-word}
+.ingredient-photo-unavailable{font:30px Georgia,serif;color:#b5a99b}
+@media(max-width:850px){.gara-product-scent{grid-template-columns:repeat(3,1fr)}.gara-product-note-entry{width:70px}.gara-product-note-entry .gara-product-note-image{width:64px;height:64px}}
+@media(max-width:500px){.gara-product-scent{grid-template-columns:1fr}.gara-product-scent-note{padding:15px 0;border-left:0;border-top:1px solid #e3dbd1}.gara-product-note-gallery{gap:12px}}

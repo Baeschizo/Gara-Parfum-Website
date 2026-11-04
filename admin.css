@@ -46,3 +46,5 @@
 
 /* Accurate curated ingredient symbols: never substitute unrelated photos */
 .adm-note-thumb .adm-ingredient-icon,.adm-selected-note-photo .adm-ingredient-icon{display:grid;place-items:center;width:100%;height:100%;font-family:system-ui,'Apple Color Emoji','Segoe UI Emoji',sans-serif;font-size:23px;line-height:1;background:#f4f0e9}.adm-selected-note-photo .adm-ingredient-icon{font-size:19px}.adm-note-thumb,.adm-selected-note-photo{background:#f4f0e9}
+
+.adm-ingredient-fallback{display:grid;place-items:center;width:100%;height:100%;font:20px Georgia,serif;color:#a49685;background:#f0ebe4}
