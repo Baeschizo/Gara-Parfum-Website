@@ -5,8 +5,8 @@
 @media(max-width:540px){.adm-content{padding:20px 14px 70px}.adm-top{padding:0 14px}.adm-top-right{font-size:0}.adm-demo{font-size:9px;line-height:1.5}.adm-heading{align-items:flex-start}.adm-heading h1{font-size:31px}.adm-heading p{line-height:1.6}.adm-primary{padding:11px 12px;font-size:10px}.adm-stat{padding:15px}.adm-stat strong{font-size:29px}.adm-section-head{padding:20px 15px}.adm-toolbar{padding:0 15px 16px;flex-direction:column;align-items:stretch}.adm-search{width:100%}.adm-filter{align-self:flex-start}.adm-table-foot{padding:16px}.adm-table-foot span{display:none}.adm-form-row{flex-direction:column}.adm-modal{padding:22px}}
 
 /* High-contrast inventory status badges */
-.adm-table .adm-status{font-weight:700;letter-spacing:.1px;border-radius:7px;padding:8px 12px;min-width:100px;justify-content:center}
-.adm-table .adm-status.ok{background:#137a37;color:#fff}
-.adm-table .adm-status.low{background:#f5b82e;color:#2c2107}
-.adm-table .adm-status.out{background:#c91f2e;color:#fff}
+.adm-table .adm-status{font-weight:600;letter-spacing:0;border-radius:100px;padding:7px 11px;min-width:0;justify-content:center}
+.adm-table .adm-status.ok{background:#dcece0;color:#276b43}
+.adm-table .adm-status.low{background:#f9e7c7;color:#926015}
+.adm-table .adm-status.out{background:#f4dada;color:#a5363e}
 .adm-table .adm-status i{background:currentColor;opacity:1}
