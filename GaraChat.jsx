@@ -1,7 +1,7 @@
 import React,{useState,useRef,useEffect} from 'react';
 import {MessageCircle,X,Send,Sparkles,ArrowUpRight} from 'lucide-react';
 
-const quick=['Suggest a fresh fragrance','Something sweet or vanilla','Woody perfumes','Prices and sizes'];
+const quick=['Fragrance for a night out','Suggest a fresh fragrance','Something for a date night','Prices and sizes'];
 const welcome="Hello! Welcome to GARA PARFUM. ✨ I can help you browse our fragrances, prices, sizes, and website features. What would you like to know?";
 const normalize=s=>s.toLowerCase().trim();
 const scentFamilies={
@@ -15,7 +15,7 @@ const scentFamilies={
  fruity:['apple','pear','peach','pineapple','mango','berry','cherry','melon','fig','lychee','plum','orange','lemon'],
  aquatic:['sea','marine','aquatic','rain','ozonic','water','salt','mineral']
 };
-const scentIntents=[['fresh',/fresh|presko|refresh|clean|malinis|summer|mainit|everyday|daily|office|citrusy/],['citrus',/citrus|lemon|lime|orange|bergamot/],['sweet',/sweet|matamis|vanilla|gourmand|dessert/],['woody',/woody|wood|kahoy|oud|sandal/],['floral',/floral|flower|bulaklak|rose|jasmine/],['spicy',/spicy|spice|pepper|maanghang/],['musky',/musk|amber|skin scent/],['fruity',/fruity|fruit|prutas/],['aquatic',/aquatic|ocean|marine|sea|water|dagat/]];
+const scentIntents=[['fresh',/fresh|refresh|clean|citrusy/],['citrus',/citrus|lemon|lime|orange|bergamot/],['sweet',/sweet|matamis|vanilla|gourmand|dessert/],['woody',/woody|wood|kahoy|oud|sandal/],['floral',/floral|flower|bulaklak|rose|jasmine/],['spicy',/spicy|spice|pepper|maanghang/],['musky',/musk|amber|skin scent/],['fruity',/fruity|fruit|prutas/],['aquatic',/aquatic|ocean|marine|sea|water|dagat/]];
 const parseIngredientList=v=>Array.isArray(v)?v:typeof v==='string'?v.split(/[,;|]+/).map(x=>x.trim()).filter(Boolean):[];
 function recommendScents(query,products,fragranceNotes){
  const intent=scentIntents.find(([,rx])=>rx.test(query))?.[0];if(!intent)return null;
@@ -24,10 +24,26 @@ function recommendScents(query,products,fragranceNotes){
  return {intent,ranked,hasNotes:catalog.some(x=>x.notes.length>0)};
 }
 
+
+const occasionProfiles=[
+ {name:'night out',pattern:/night\s*out|nightlife|clubbing|party|evening|going out|night time|nighttime/,families:['woody','spicy','musky','sweet'],intro:'For a night out, you might enjoy a warmer, richer fragrance. Here are options whose listed notes lean woody, spicy, musky or sweet.'},
+ {name:'date night',pattern:/date\s*night|romantic|dinner date|dating|dinner/,families:['sweet','floral','musky','woody'],intro:'For a date night, these fragrances have notes that may suit a warm, inviting scent profile.'},
+ {name:'office',pattern:/office|workplace|work\s*day|professional|school|class/,families:['fresh','citrus','aquatic','floral'],intro:'For work or school, these fragrances feature fresh, citrus, aquatic or soft floral notes.'},
+ {name:'summer',pattern:/summer|hot\s*weather|beach|humid|daytime|day\s*time/,families:['fresh','citrus','aquatic','fruity'],intro:'For warm days, these options feature fresh, citrus, aquatic or fruity notes.'},
+ {name:'everyday',pattern:/everyday|daily\s*wear|casual|all\s*day|day\s*to\s*day/,families:['fresh','citrus','floral','musky'],intro:'For everyday wear, here are fragrances with versatile fresh, citrus, floral or musky notes.'}
+];
+function productSuggestions(items){return items.map(x=>({code:x.product.code,name:x.product.name,image:x.product.image,price:x.product.price,size:x.product.size,category:x.product.category,matched:x.matches.slice(0,4)}));}
+function recommendOccasion(query,products,fragranceNotes){
+ const occasion=occasionProfiles.find(o=>o.pattern.test(query));if(!occasion)return null;
+ const scored=products.map(p=>{const info=fragranceNotes.find(x=>String(x.code)===String(p.code));const notes=[...parseIngredientList(info?.topNotes),...parseIngredientList(info?.middleNotes),...parseIngredientList(info?.baseNotes)];const matches=notes.filter(n=>occasion.families.some(f=>scentFamilies[f].some(word=>n.toLowerCase().includes(word))));return {product:p,matches,score:matches.length};}).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,3);
+ return scored.length?{text:occasion.intro+' Recommendations are based on the notes in our catalog, and personal preferences may vary. Select a fragrance below to explore it.',suggestions:productSuggestions(scored)}:{text:'I would be happy to help you find a fragrance for '+occasion.name+'. However, we do not have enough matching ingredient notes in the current catalog to make a reliable recommendation. You can explore our fragrances or tell me whether you prefer fresh, sweet, woody or floral scents.',action:'Explore fragrances'};
+}
+
 function answer(input,products,fragranceNotes){
+ const occasionMatch=recommendOccasion(normalize(input),products,fragranceNotes);if(occasionMatch)return occasionMatch;
  const q=normalize(input);
  const recommendations=recommendScents(q,products,fragranceNotes);
- if(recommendations){if(recommendations.ranked.length){const {intent,ranked}=recommendations;return {text:'Based on the '+intent+' notes recorded in our fragrance catalog, here '+(ranked.length===1?'is a match':'are some matches')+' you might enjoy. These are note-based suggestions, not guaranteed scent impressions.',suggestions:ranked.map(x=>({code:x.product.code,name:x.product.name,image:x.product.image,price:x.product.price,size:x.product.size,category:x.product.category,matched:x.matches.slice(0,4)}))};}return {text:recommendations.hasNotes?'I couldn’t find a verified '+recommendations.intent+' note match in the current GARA catalog. Try another scent family, or browse all fragrances.':'We don’t have enough fragrance notes saved in the catalog yet to make a reliable recommendation. Once the admin adds Top, Heart and Base Notes, I can match perfumes to your preference.',action:'Browse fragrances'};}
+ if(recommendations){if(recommendations.ranked.length){const {intent,ranked}=recommendations;return {text:'Based on the '+intent+' notes recorded in our fragrance catalog, here '+(ranked.length===1?'is a match':'are some matches')+' you might enjoy. These are note-based suggestions, not guaranteed scent impressions.',suggestions:productSuggestions(ranked)};}return {text:recommendations.hasNotes?'I couldn’t find a verified '+recommendations.intent+' note match in the current GARA catalog. Try another scent family, or browse all fragrances.':'We don’t have enough fragrance notes saved in the catalog yet to make a reliable recommendation. Once the admin adds Top, Heart and Base Notes, I can match perfumes to your preference.',action:'Browse fragrances'};}
  const match=products.find(p=>new RegExp('\\b'+p.code+'\\b').test(q)||q.includes(p.name.toLowerCase()));
  if(match)return {text:match.name+' is listed at ₱'+match.price+' for '+match.size+' ('+match.category+'). Fragrance notes, availability and exact variants still need confirmation from GARA PARFUM.',action:'View '+match.name,code:match.code};
  if(/price|cost|magkano|presyo|size|ml|how much/.test(q))return {text:'Our current catalog lists 30ml fragrances at ₱449 and 50ml fragrances at ₱499. These are preview prices and should be confirmed with GARA PARFUM. You can open Shop All to compare the products.',action:'Browse prices'};
