@@ -10,3 +10,20 @@
 .adm-table .adm-status.low{background:#f9e7c7;color:#926015}
 .adm-table .adm-status.out{background:#f4dada;color:#a5363e}
 .adm-table .adm-status i{background:currentColor;opacity:1}
+
+/* Premium dark sidebar — GARA Operations */
+.adm-side{background:#171715;border-right:1px solid #34322f;color:#f7f4ed}
+.adm-brand-icon{background:#f0e9de;color:#24221e}
+.adm-brand strong{color:#f8f5ef}
+.adm-brand small,.adm-side-label{color:#a9a095}
+.adm-side nav button{color:#b8b2a9}
+.adm-side nav button svg{color:#b8b2a9}
+.adm-side nav button.active{background:#35332f;color:#fff;font-weight:700}
+.adm-side nav button.active svg{color:#f4ede2}
+.adm-side nav button:hover{background:#2a2926;color:#fff}
+.adm-side nav button span{color:#b9b0a5}
+.adm-side-bottom{border-top-color:#393630}
+.adm-side-bottom strong{color:#f4f0e9}
+.adm-side-bottom small{color:#a9a095}
+.adm-side-bottom>svg{color:#b9b0a5}
+.adm-side .adm-avatar{background:#3e3a34;color:#f3ece1}
