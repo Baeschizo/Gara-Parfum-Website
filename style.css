@@ -357,3 +357,19 @@
 .gara-product-visual>img{position:absolute;inset:0;margin:auto;display:block;width:68%;height:86%;max-width:68%;max-height:86%;min-width:0;min-height:0;object-fit:contain;object-position:center center;transform:none;filter:none}
 @media(max-width:850px){.gara-product-visual{aspect-ratio:4/3}.gara-product-visual>img{width:60%;height:84%;max-width:60%;max-height:84%}}
 @media(max-width:500px){.gara-product-visual>img{width:68%;height:86%;max-width:68%;max-height:86%}}
+
+/* Bag and checkout polish */
+body:has(.drawer-layer) .gara-chat-root{display:none!important}
+.drawer-layer{z-index:1200!important}
+.drawer{max-height:100dvh;overflow:hidden}
+.bag-list{min-height:0;overflow-y:auto}
+.bag-item img{display:block;width:100%;height:128px;object-fit:contain;object-position:center;background:#eee9e2;border-radius:5px;padding:8px}
+.bag-footer{flex-shrink:0}
+.checkout{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-bottom:36px}
+.gara-decant-request{margin-top:24px;padding:19px 18px;background:#eee9e2;border:1px solid #e1d6c9;border-radius:8px}
+.gara-decant-request .eyebrow{font-size:10px;letter-spacing:1.5px;color:#725e47}
+.gara-decant-request p{font-size:11px;line-height:1.7;margin:11px 0;color:#71665a}
+.gara-decant-request label{margin:14px 0 8px}
+.gara-decant-request input{background:#faf8f4}
+.gara-decant-request small{font-size:10px;color:#8e8071}
+@media(max-width:600px){.drawer-head{padding:20px}.checkout{padding:20px}.bag-item img{height:110px}}
