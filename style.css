@@ -84,3 +84,14 @@
   -webkit-mask-image:none;mask-image:none;
 }
 .gara-bestsellers .product-photo:hover>img{transform:scale(1.025)}
+
+/* Fit complete bottles within best-seller cards, no cropped caps or bases.
+   Keep image area uniform while gently feathering the source-photo edges. */
+.gara-bestsellers .product-photo{background:#f0e5d9}
+.gara-bestsellers .product-photo>img{
+  width:100%;height:100%;padding:8px 20px;
+  object-fit:contain;object-position:center;
+  mix-blend-mode:multiply;filter:none;
+  -webkit-mask-image:radial-gradient(ellipse 79% 88% at center,#000 68%,transparent 100%);
+  mask-image:radial-gradient(ellipse 79% 88% at center,#000 68%,transparent 100%);
+}
