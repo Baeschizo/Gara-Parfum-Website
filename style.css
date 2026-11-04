@@ -105,3 +105,52 @@
  -webkit-mask-image:none;mask-image:none;
 }
 @media(max-width:540px){.gara-bestsellers .product-photo{height:auto;aspect-ratio:4/5}}
+
+/* Modern editorial benefits and collection intro */
+.gara-benefits{
+ max-width:1320px;margin:44px auto 0;padding:23px 25px;
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;
+ background:linear-gradient(125deg,rgba(255,255,255,.72),rgba(245,236,226,.83));
+ border:1px solid rgba(255,255,255,.85);border-radius:22px;
+ box-shadow:0 16px 42px rgba(90,69,49,.075),inset 0 1px rgba(255,255,255,.9);
+}
+.gara-benefits>div{
+ display:grid;grid-template-columns:58px minmax(0,1fr);grid-template-rows:auto auto;
+ align-content:center;column-gap:17px;row-gap:5px;
+ padding:12px 20px;border-right:1px solid #ddd1c5;
+}
+.gara-benefits>div:last-child{border-right:0}
+.gara-benefits .benefit-icon{
+ grid-row:1/3;width:58px;height:58px;border-radius:17px;
+ display:grid;place-items:center;background:linear-gradient(145deg,#fffdf9,#f4e9dc);
+ box-shadow:0 6px 15px rgba(81,62,44,.06);font:32px/1 'Playfair Display',serif;
+}
+.gara-benefits strong{font-size:10px;letter-spacing:1.4px;align-self:end}
+.gara-benefits small{font-size:11px;color:#84796e;align-self:start;margin:0}
+.gara-collections{padding-top:88px}
+.gara-collections .section-title{align-items:center;margin-bottom:35px}
+.gara-collections .eyebrow{display:flex;align-items:center;gap:17px;letter-spacing:3px}
+.gara-collections .eyebrow:after{content:"";width:70px;height:1px;background:#988c80}
+.gara-collections .section-title h2{font-size:clamp(47px,5.5vw,77px);letter-spacing:-1.7px;margin-top:19px}
+.gara-collections .section-title>.link{
+ border-radius:100px;background:#28231e;color:#fff;padding:15px 25px;
+ display:inline-flex;align-items:center;gap:25px;font-size:10px;letter-spacing:1.6px;
+ transition:background .2s,transform .2s;
+}
+.gara-collections .section-title>.link:hover{background:#55483d;transform:translateY(-2px);opacity:1}
+@media(max-width:1000px){
+ .gara-benefits{margin:28px 5% 0;padding:15px 12px}
+ .gara-benefits>div{grid-template-columns:42px minmax(0,1fr);column-gap:10px;padding:10px}
+ .gara-benefits .benefit-icon{width:42px;height:42px;border-radius:13px;font-size:26px}
+ .gara-benefits strong{font-size:9px;letter-spacing:.6px}
+ .gara-benefits small{font-size:10px}
+}
+@media(max-width:650px){
+ .gara-benefits{grid-template-columns:repeat(2,minmax(0,1fr));margin:18px 5% 0;padding:12px;border-radius:16px;row-gap:10px}
+ .gara-benefits>div:nth-child(2){border-right:0}
+ .gara-benefits>div{padding:9px 7px}
+ .gara-collections{padding-top:57px}
+ .gara-collections .section-title h2{font-size:clamp(40px,10vw,58px)}
+ .gara-collections .section-title>.link{padding:12px 15px;gap:9px;font-size:9px}
+ .gara-collections .eyebrow:after{width:35px}
+}
