@@ -249,3 +249,19 @@
  .gara-benefits small{font-size:10px}
  .gara-collections{padding-top:42px}
 }
+
+/* Shop All: consistent framed product photography, matching best-seller scale. */
+.shop-page .products{gap:clamp(15px,1.7vw,28px)}
+.shop-page .product-photo{height:auto;aspect-ratio:4/5;background:#eee9e2;border-radius:3px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shop-page .product-photo>img{display:block;width:78%;height:82%;padding:0;object-fit:contain;object-position:center;mix-blend-mode:normal;filter:none;-webkit-mask-image:none;mask-image:none;transform:none;transition:transform .3s ease}
+.shop-page .product-photo:hover>img{transform:scale(1.025)}
+.shop-page .product-caption{padding-top:14px}
+@media(max-width:800px){.shop-page .products{gap:14px}.shop-page .product-photo>img{width:82%;height:84%}}
+
+/* Specific catalog selector independent of outer page markup */
+.shop-products{gap:clamp(15px,1.7vw,28px)}
+.shop-products .product-photo{height:auto;aspect-ratio:4/5;background:#eee9e2;border-radius:3px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.shop-products .product-photo>img{display:block;width:78%;height:82%;padding:0;object-fit:contain;object-position:center;mix-blend-mode:normal;filter:none;-webkit-mask-image:none;mask-image:none;transform:none;transition:transform .3s ease}
+.shop-products .product-photo:hover>img{transform:scale(1.025)}
+.shop-products .product-caption{padding-top:14px}
+@media(max-width:800px){.shop-products{gap:14px}.shop-products .product-photo>img{width:82%;height:84%}}
