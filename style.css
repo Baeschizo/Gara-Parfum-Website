@@ -45,13 +45,31 @@
 @media(max-width:800px){.gara-hero{grid-template-columns:1fr 1fr;min-height:430px}.gara-hero-copy{padding:40px 7%}.gara-hero-copy h1{font-size:clamp(38px,5.5vw,55px)}.gara-hero-visual{min-height:430px}.gara-hero-visual img{height:340px}.gara-benefits{grid-template-columns:repeat(2,1fr);row-gap:18px}.gara-benefits>div:nth-child(2){border:0}.gara-category-grid{gap:10px}.gara-category{height:170px;padding:18px}.gara-category h3{font-size:25px}}
 @media(max-width:540px){.nav-shell{height:74px}.gara-hero{grid-template-columns:1fr;min-height:0}.gara-hero-copy{padding:56px 7% 36px}.gara-hero-copy h1{font-size:51px;margin:19px 0}.gara-hero-copy>p{font-size:12px;max-width:340px}.gara-hero-visual{min-height:320px}.gara-hero-visual img{height:300px;width:52%}.gara-hero-visual .hero-stone{height:55px}.gara-benefits{padding:22px 4%;gap:15px}.gara-benefits>div{padding:5px 7px;grid-template-columns:24px 1fr;column-gap:8px}.benefit-icon{font-size:24px}.gara-benefits strong{font-size:8px}.gara-benefits small{font-size:9px}.gara-collections{padding-top:50px}.gara-category-grid{grid-template-columns:1fr;gap:9px}.gara-category{height:100px;padding:18px 22px}.gara-category h3{font-size:25px}.gara-category p{font-size:10px}.gara-category svg{display:none}.gara-bestsellers{padding-top:45px;padding-bottom:65px}.gara-bestsellers .product-photo{height:220px}.gara-editorial{grid-template-columns:1fr}.gara-editorial>div{padding:65px 8%}.gara-editorial>img{height:310px}}
 
-/* Blend the supplied product photos into the warm-ivory layout. */
-.gara-hero-visual{background:#eee4d8;isolation:isolate}
-.gara-hero-visual:before,.gara-hero-visual .hero-stone{display:none}
-.gara-hero-visual img{width:min(78%,460px);height:520px;object-fit:contain;mix-blend-mode:multiply;filter:contrast(1.035) saturate(1.05);-webkit-mask-image:radial-gradient(ellipse 69% 73% at 50% 51%,#000 56%,transparent 100%);mask-image:radial-gradient(ellipse 69% 73% at 50% 51%,#000 56%,transparent 100%)}
-.gara-hero-visual>span{color:#75685a;z-index:3}
-.gara-bestsellers .product-photo{background:#eee4d8}
-.gara-bestsellers .product-photo>img{mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 72% 76% at center,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 72% 76% at center,#000 58%,transparent 100%)}
-.gara-editorial>img{background:#eee4d8;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 70% 76% at center,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 70% 76% at center,#000 55%,transparent 100%)}
-@media(max-width:800px){.gara-hero-visual img{height:370px;width:85%}}
-@media(max-width:540px){.gara-hero-visual img{height:320px;width:80%}}
+
+/* Final GARA PARFUM product photography presentation.
+   Uses the four existing uploaded images without replacing their files. */
+.gara-hero{background:#efe7dd}
+.gara-hero-copy{background:linear-gradient(105deg,#f4eee6 0%,#efe7dd 100%)}
+.gara-hero-visual{background:#efe4d8;isolation:isolate;min-width:0}
+.gara-hero-visual::before,.gara-hero-visual .hero-stone{display:none}
+.gara-hero-visual img{
+  width:min(88%,540px);height:540px;object-fit:contain;padding:0;
+  mix-blend-mode:multiply;
+  filter:contrast(1.07) saturate(1.06);
+  -webkit-mask-image:radial-gradient(ellipse 75% 79% at 50% 49%,#000 56%,rgba(0,0,0,.92) 71%,transparent 100%);
+  mask-image:radial-gradient(ellipse 75% 79% at 50% 49%,#000 56%,rgba(0,0,0,.92) 71%,transparent 100%);
+}
+.gara-hero-visual>span{z-index:3;color:#796d60}
+.gara-bestsellers .product-photo{background:#efe5d9}
+.gara-bestsellers .product-photo>img{
+  object-fit:contain;padding:14px;mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 80% 83% at center,#000 64%,transparent 100%);
+  mask-image:radial-gradient(ellipse 80% 83% at center,#000 64%,transparent 100%);
+}
+.gara-editorial>img{
+  background:#efe4d8;mix-blend-mode:multiply;
+  -webkit-mask-image:radial-gradient(ellipse 78% 82% at center,#000 61%,transparent 100%);
+  mask-image:radial-gradient(ellipse 78% 82% at center,#000 61%,transparent 100%);
+}
+@media(max-width:800px){.gara-hero-visual img{width:92%;height:400px}}
+@media(max-width:540px){.gara-hero-visual{min-height:350px}.gara-hero-visual img{width:min(90%,340px);height:345px}.gara-hero-visual>span{font-size:8px}}
