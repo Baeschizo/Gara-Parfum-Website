@@ -351,3 +351,9 @@
 .gara-product-scent-note p{font-size:12px;color:#81766b;line-height:1.6}
 @media(max-width:850px){.gara-product-hero{grid-template-columns:1fr}.gara-product-visual{aspect-ratio:4/3}.gara-product-scent{grid-template-columns:repeat(3,1fr);gap:12px}.gara-product-scent-intro{grid-column:1/-1}.gara-product-scent-note{padding-left:12px}.gara-product-note-image{width:100px}.gara-product-information{padding:0}}
 @media(max-width:500px){.gara-product-page{padding:20px 16px 55px}.gara-product-breadcrumb{gap:12px;font-size:10px}.gara-product-scent{margin-top:50px;padding-top:30px}.gara-product-note-image{width:75px}.gara-product-scent-note strong{font-size:9px}.gara-product-scent-note p{font-size:10px}.gara-scent-preview{padding:8px}.gara-preview-desc{display:none}.gara-preview-note-img{width:27px;height:27px}.gara-preview-bottom{display:none}}
+
+/* Product detail: fully visible bottle, no clipping or oversized image */
+.gara-product-visual{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;overflow:hidden;aspect-ratio:1/1;background:#eee9e2}
+.gara-product-visual>img{position:absolute;inset:0;margin:auto;display:block;width:68%;height:86%;max-width:68%;max-height:86%;min-width:0;min-height:0;object-fit:contain;object-position:center center;transform:none;filter:none}
+@media(max-width:850px){.gara-product-visual{aspect-ratio:4/3}.gara-product-visual>img{width:60%;height:84%;max-width:60%;max-height:84%}}
+@media(max-width:500px){.gara-product-visual>img{width:68%;height:86%;max-width:68%;max-height:86%}}
