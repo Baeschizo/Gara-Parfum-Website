@@ -27,3 +27,6 @@
 .adm-side-bottom small{color:#a9a095}
 .adm-side-bottom>svg{color:#b9b0a5}
 .adm-side .adm-avatar{background:#3e3a34;color:#f3ece1}
+
+/* Fragrance notes editor */
+.adm-notes-section{display:flex;flex-direction:column;gap:14px;border-top:1px solid #e9e3db;padding-top:21px;margin-top:5px}.adm-notes-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}.adm-notes-heading strong{font:400 21px 'Playfair Display',serif;color:#302a25}.adm-notes-heading span{font-size:10px;color:#a09383}.adm-modal textarea{padding:12px;border:1px solid #e3dcd2;border-radius:7px;background:#fff;color:#342d26;resize:vertical;min-height:75px;font:inherit;font-size:12px}.adm-modal textarea:focus-visible{outline:2px solid #a18e79;outline-offset:2px}
