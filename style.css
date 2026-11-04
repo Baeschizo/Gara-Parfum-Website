@@ -387,3 +387,9 @@ body:has(.drawer-layer) .gara-chat-root{display:none!important}
 .ingredient-photo-unavailable{font:30px Georgia,serif;color:#b5a99b}
 @media(max-width:850px){.gara-product-scent{grid-template-columns:repeat(3,1fr)}.gara-product-note-entry{width:70px}.gara-product-note-entry .gara-product-note-image{width:64px;height:64px}}
 @media(max-width:500px){.gara-product-scent{grid-template-columns:1fr}.gara-product-scent-note{padding:15px 0;border-left:0;border-top:1px solid #e3dbd1}.gara-product-note-gallery{gap:12px}}
+
+/* Restore editorial hover preview; retain corrected ingredient photo source */
+.product-photo .gara-scent-preview{display:block!important;position:absolute;z-index:5;left:5%;right:5%;bottom:5%;width:auto;max-height:90%;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;transition:opacity .22s ease,transform .22s ease,visibility .22s}
+.product-photo:hover .gara-scent-preview,.product-photo:focus-within .gara-scent-preview{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.gara-scent-preview .gara-preview-note-img img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+@media(hover:none){.product-photo .gara-scent-preview{display:none!important}}
