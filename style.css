@@ -265,3 +265,28 @@
 .shop-products .product-photo:hover>img{transform:scale(1.025)}
 .shop-products .product-caption{padding-top:14px}
 @media(max-width:800px){.shop-products{gap:14px}.shop-products .product-photo>img{width:82%;height:84%}}
+
+/* GARA fragrance catalog assistant */
+.gara-chat-root{position:fixed;right:24px;bottom:24px;z-index:1100;font-family:inherit}
+.gara-chat-toggle{display:flex;align-items:center;gap:10px;padding:15px 20px;border:0;border-radius:100px;background:#29241f;color:#fff;box-shadow:0 10px 30px #29241f35;cursor:pointer;font-size:12px;letter-spacing:1px;font-weight:600}
+.gara-chat-toggle:hover{background:#51473d}
+.gara-chat-panel{position:absolute;right:0;bottom:70px;width:min(385px,calc(100vw - 32px));height:min(570px,calc(100dvh - 120px));background:#faf8f4;border:1px solid #e6ddd3;border-radius:16px;box-shadow:0 20px 70px #29241f35;display:flex;flex-direction:column;overflow:hidden}
+.gara-chat-head{display:flex;align-items:center;gap:12px;padding:19px;background:#29241f;color:#fff}
+.gara-chat-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#51463b}
+.gara-chat-head div{flex:1;display:flex;flex-direction:column;gap:4px}
+.gara-chat-head strong{font-size:12px;letter-spacing:1.6px}
+.gara-chat-head small{font-size:10px;color:#d6cbc0}
+.gara-chat-head button{background:none;border:0;color:#fff;cursor:pointer}
+.gara-chat-messages{flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:13px}
+.gara-chat-bubble{max-width:89%;padding:12px 14px;border-radius:12px;background:#eee8df;color:#2c2823;align-self:flex-start;font-size:12px;line-height:1.65}
+.gara-chat-bubble.is-user{background:#302a24;color:#fff;align-self:flex-end}
+.gara-chat-bubble p{margin:0}
+.gara-chat-bubble button{display:flex;align-items:center;gap:5px;margin-top:10px;padding:0;background:none;border:0;border-bottom:1px solid currentColor;color:inherit;cursor:pointer;font-size:11px}
+.gara-chat-quick{display:flex;flex-wrap:wrap;gap:7px}
+.gara-chat-quick button{background:#fff;border:1px solid #d9cec1;border-radius:100px;padding:9px 12px;color:#42392f;font-size:11px;cursor:pointer}
+.gara-chat-compose{display:flex;gap:8px;padding:12px 15px;border-top:1px solid #e6ddd3;background:#fff}
+.gara-chat-compose input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:12px;color:#29241f}
+.gara-chat-compose button{border:0;border-radius:50%;background:#29241f;color:#fff;width:36px;height:36px;display:grid;place-items:center;cursor:pointer}
+.gara-chat-compose button:disabled{opacity:.35;cursor:default}
+.gara-chat-disclaimer{text-align:center;background:#fff;padding:0 10px 10px;color:#9b9085;font-size:9px}
+@media(max-width:600px){.gara-chat-root{right:14px;bottom:14px}.gara-chat-panel{bottom:66px;height:min(560px,calc(100dvh - 110px))}.gara-chat-toggle{padding:14px 16px}}
