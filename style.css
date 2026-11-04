@@ -73,3 +73,14 @@
 }
 @media(max-width:800px){.gara-hero-visual img{width:92%;height:400px}}
 @media(max-width:540px){.gara-hero-visual{min-height:350px}.gara-hero-visual img{width:min(90%,340px);height:345px}.gara-hero-visual>span{font-size:8px}}
+
+/* Seamless best-seller photography: fill card edge-to-edge instead of
+   showing a smaller square photograph inside a differently colored box. */
+.gara-bestsellers .product-photo{background:#e8d4c3;overflow:hidden}
+.gara-bestsellers .product-photo>img{
+  display:block;width:100%;height:100%;padding:0;
+  object-fit:cover;object-position:center center;
+  mix-blend-mode:normal;filter:none;
+  -webkit-mask-image:none;mask-image:none;
+}
+.gara-bestsellers .product-photo:hover>img{transform:scale(1.025)}
